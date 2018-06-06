@@ -133,5 +133,15 @@ bot.on('message', message => {
 
 
 bot.on('guildMemberAdd', member => {
-    bot.channels.get("450033147325841408").send("Bievenue" + member.user.username)
+    member.guild.channels.find("name", "bienvenue").send('Bienvenue ${member}');
+});
+
+bot.on('guildMemberRemove', member => {
+    member.guild.channels.find("name", "bienvenue").send('${member} viens de quitter ce discord');
+});
+
+bot.on('messageReactionAdd', ('reaction', 'user') => {
+    if (reaction.emoji.name === ':tada:') {
+        reaction.channel.sendMessage("tada");
+    }
 });
