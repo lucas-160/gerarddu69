@@ -77,9 +77,9 @@ bot.on('message', message => {
                 .setColor("0x0000FF")
             message.channel.sendEmbed(embed)
             .then(function (message) {
-                message.react("✅")
+                message.react("👍")
                 message.react("😶")
-                message.react("☹")
+                message.react("👎")
             }).catch(function() {
             });
         }else{
