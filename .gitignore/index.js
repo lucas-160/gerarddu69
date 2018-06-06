@@ -139,9 +139,3 @@ bot.on('guildMemberAdd', member => {
 bot.on('guildMemberRemove', member => {
     member.guild.channels.find("name", "bienvenue").send('${member} viens de quitter ce discord');
 });
-
-bot.on('messageReactionAdd', ('reaction', 'user') => {
-    if (reaction.emoji.name === ':tada:') {
-        reaction.channel.sendMessage("tada");
-    }
-});
